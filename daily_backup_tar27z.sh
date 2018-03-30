@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # File:         daily_backup_tar27z.sh
-# Description:  Simple backup of present day file changes (including hidden files) using TAR and 7-Zip
-# Usage:        Place in highest directory to be backed-up; chmod 700
+# Description:  Simple backup of present day file changes (including hidden files) using TAR and 7-Zip.
+#               Includes hidden files and retains ownership.
+# Usage:        Place this file in the topmost directory to be backed-up.
+#               chmod 700 daily_backup_tar27z.sh
+#               ./daily_backup_tar27z.sh
 # Copyright:    Martin Latter, June 2014
-# Version:      0.02
+# Version:      0.03
 # License:      GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
 # Link:         https://github.com/Tinram/Daily-Backups.git
 
