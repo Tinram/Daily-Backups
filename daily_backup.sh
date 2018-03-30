@@ -13,7 +13,7 @@
 #                 ./daily_backup.sh 2018-03-01
 #
 # Execution       1. enter startdate as first switch parameter in format YYYY-MM-DD, e.g. ./daily_backup.sh 2018-03-01
-#                 2. call without ./daily_backup.sh
+#                 2. call without switch parameter: ./daily_backup.sh
 #                    which prompts for startdate: enter date, else hit ENTER for just today's files.
 #
 # Copyright:      Martin Latter, 11/09/2014
