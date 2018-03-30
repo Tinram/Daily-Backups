@@ -1,6 +1,6 @@
 
 REM Copyright:    Martin Latter, September 2007
-REM Version:      0.3
+REM Version:      0.31
 REM License:      GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
 REM Link:         https://github.com/Tinram/Daily-Backups.git
 
@@ -15,7 +15,7 @@ XCOPY "c:\temp" "c:\t-backup\%dates%" /s /i /D:%dates2%
 XCOPY "c:\documents and settings\john.doe\my documents\reference" "c:\t-backup\%dates%" /s /i /D:%dates2%
 
 CD c:\program files\7-Zip
-7z a %dates%.7z -t7z -mx=7 -md64M -ms=1m -mmt=on -mhe=on -pPa55Word "C:\t-backup\%dates%\*"
+7z a %dates%.7z -t7z -mx=7 -md64M -ms=1m -mmt=on -mhe=on -pP@55w0rd "C:\t-backup\%dates%\*"
 
 MOVE %dates3%.7z \\ServerName\users\john.doe\dbs
 
