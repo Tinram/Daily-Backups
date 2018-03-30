@@ -38,6 +38,42 @@ The batch script *daily\_backup.bat* copies all files residing in two directorie
 
 ## Linux
 
-Place *daily\_backup.sh* in the highest directory to be backed-up, and make executable with `chmod 700`.
+### *daily_backup_tar27z.sh*
 
-@TODO
++ Simple backup of present day file changes using TAR and 7-Zip.
++ Includes hidden files and retains ownership.
+
+#### Usage
+
++ Place *daily_backup_tar27z.sh* in the topmost directory to be backed-up.
++ Change `P@55w0rd` (in `-pP@55w0rd`) to something better.
++ `chmod 700 daily_backup_tar27z.sh`
++ `./daily_backup_tar27z.sh`
+
+
+### *daily_backup.sh*
+
++ Backup using 7-Zip of:
+    1. date range of file changes until today, or
+    2. files changed today.
++ Hidden files are excluded.
+
+#### Usage
+
++ Place *daily_backup.sh* in the topmost directory to be backed-up.
++ Change PASSWORD to something longer and more complex than `P@55w0rd`
++ `chmod 700 daily_backup.sh`
+
+#### Execute
+
+1. `./daily_backup.sh`
+2. `./daily_backup.sh 2018-03-01`
+
+1) Prompts for the startdate: enter date in the format YYYY-MM-DD, else hit ENTER for just today's files.
+
+2) Startdate is the first switch parameter.
+
+
+## License
+
+Scripts are released under the [GPL v.3](https://www.gnu.org/licenses/gpl-3.0.html).
