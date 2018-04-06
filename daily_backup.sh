@@ -17,7 +17,7 @@
 #                    which prompts for startdate: enter date, else hit ENTER for just today's files.
 #
 # Copyright:      Martin Latter, 11/09/2014
-# Version:        0.03, rv. 28/03/18
+# Version:        0.04, rv. 06/04/18
 # License:        GNU GPL version 3.0 (GPL v3); http://www.gnu.org/licenses/gpl.html
 # Link:           https://github.com/Tinram/Daily-Backups.git
 
@@ -34,20 +34,20 @@ ENDDATE=$(date -d "+1 day" +"%Y-%m-%d") # MUST BE DAY +1
 
 if [ -z "$1" ]; then
 	echo 'enter start date (YYYY-MM-DD) or ENTER for just today'
-	read response
-	if [ -z $response ]; then # if blank = today
+	read -r RESPONSE
+	if [ -z "$RESPONSE" ]; then # if blank = today
 		STARTDATE=$(date +"%Y%m%d")
 	else
-		STARTDATE=$response # else = date range
+		STARTDATE=$RESPONSE # else = date range
 	fi
 fi
 
 
 # DATE RANGE
-find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f -newermt $STARTDATE ! -newermt $ENDDATE -fprintf $FILELIST '%P\n'
+find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f -newermt "$STARTDATE" ! -newermt "$ENDDATE" -fprintf $FILELIST '%P\n'
 
 NOW="backup_"$(date +"%Y%m%d")
 
-7za a -p$PASSWORD -t7z -mx=7 -md64m -ms=4m -mmt=on -mhe=on $NOW.7z @FL.txt
+7za a -p$PASSWORD -t7z -mx=7 -md64m -ms=4m -mmt=on -mhe=on "$NOW.7z" @FL.txt
 
 rm $FILELIST
