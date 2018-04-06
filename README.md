@@ -15,25 +15,36 @@ Backup daily changes to files using the [7-Zip](http://7-Zip.org) application, w
 <a id="linux"></a>
 ## Linux
 
+Install 7-Zip (*p7zip* or *p7zip-full*)
+
+e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
+
+----
+
 ### *daily_backup_tar27z.sh*
 
-+ Simple backup of current day file changes using TAR and 7-Zip.
++ TAR/7-Zip compressed amd encrypted backup of current day file changes.
 + Includes hidden files and retains file ownership.
++ Automatically move created *.tar.7z* file to another location, such as an external drive.
 
 #### Usage
 
 + Place *daily_backup_tar27z.sh* in the topmost directory to be backed-up.
 + Change `P@55w0rd` (in `-pP@55w0rd`) to something better.
++ Change `/mnt/server_path` to the destination location.
 + `chmod 700 daily_backup_tar27z.sh`
 + `./daily_backup_tar27z.sh`
 
+----
 
 ### *daily_backup.sh*
 
-+ Backup using 7-Zip of:
++ 7-Zip compressed and encrypted backup of:
     + date range of file changes until today, or
     + files changed on current date.
 + Hidden files are excluded.
++ File ownership not retained, only file permissions.
++ *.7z* file remains in directory where created.
 
 #### Usage
 
