@@ -33,7 +33,7 @@ e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
 + Change `P@55w0rd` (in `-pP@55w0rd`) to something better.
 + Change `/mnt/server_path` to the destination location.
 + `chmod 700 daily_backup_tar27z.sh`
-+ `./daily_backup_tar27z.sh`
++ Execute directly `./daily_backup_tar27z.sh` or add to cron.
 
 ----
 
@@ -57,7 +57,7 @@ e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
 1. `./daily_backup.sh`
 2. `./daily_backup.sh 2018-03-01`
 
-1 -- Prompts for the startdate: enter date in the format YYYY-MM-DD, else hit ENTER for just today's files.
+1 -- Prompts for the startdate: enter date in the format YYYY-MM-DD, or hit ENTER for just today's files.
 
 2 -- Startdate is the first switch parameter.
 
