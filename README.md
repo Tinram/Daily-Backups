@@ -17,13 +17,13 @@ Backup daily changes to files using the [7-Zip](http://7-Zip.org) application, w
 
 Install 7-Zip (*p7zip* or *p7zip-full*)
 
-e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
+e.g. for Debian-based distros: `sudo apt install p7zip-full`
 
 ----
 
 ### *daily_backup_tar27z.sh*
 
-+ TAR/7-Zip compressed amd encrypted backup of current day file changes.
++ Tar/7-Zip compressed amd encrypted backup of current day file changes.
 + Includes hidden files and retains file ownership.
 + Automatically move created *.tar.7z* file to another location, such as an external drive.
 
@@ -33,7 +33,7 @@ e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
 + Change `P@55w0rd` (in `-pP@55w0rd`) to something better.
 + Change `/mnt/server_path` to the destination location.
 + `chmod 700 daily_backup_tar27z.sh`
-+ Execute directly `./daily_backup_tar27z.sh` or add to cron.
++ Execute directly with: `./daily_backup_tar27z.sh` or add to a crontab.
 
 ----
 
@@ -42,13 +42,13 @@ e.g. for Debian-based distros: `sudo apt-get install p7zip-full`
 + 7-Zip compressed and encrypted backup of:
     + date range of file changes until today, or
     + files changed on current date.
-+ Hidden files are excluded.
-+ File ownership not retained, only file permissions.
++ *Hidden files are excluded*.
++ *File ownership is not retained*, only file permissions.
 + *.7z* file remains in directory where created.
 
 #### Usage
 
-+ Place *daily_backup.sh* in the topmost directory to be backed-up.
++ Place *daily_backup.sh* in the topmost directory to be backed-up (e.g. */home/<user>/* for a user).
 + Change PASSWORD value to something longer and more complex than `P@55w0rd`
 + `chmod 700 daily_backup.sh`
 
