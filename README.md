@@ -29,10 +29,10 @@ e.g. for Debian-based distros: `sudo apt install p7zip-full`
 
 #### Usage
 
-+ Place *daily_backup_tar27z.sh* in the topmost directory to be backed-up.
++ `chmod 700 daily_backup_tar27z.sh`
 + Change `P@55w0rd` (in `-pP@55w0rd`) to something better.
 + Change `/mnt/server_path` to the destination location.
-+ `chmod 700 daily_backup_tar27z.sh`
++ Place *daily_backup_tar27z.sh* in the topmost directory to be backed-up (or place in a *$PATH* directory location).
 + Execute directly with: `./daily_backup_tar27z.sh` or add to a crontab.
 
 ----
@@ -48,9 +48,9 @@ e.g. for Debian-based distros: `sudo apt install p7zip-full`
 
 #### Usage
 
-+ Place *daily_backup.sh* in the topmost directory to be backed-up (e.g. */home/<user>/* for a user).
-+ Change PASSWORD value to something longer and more complex than `P@55w0rd`
 + `chmod 700 daily_backup.sh`
++ Change PASSWORD value to something longer and more complex than `P@55w0rd`
++ Place *daily_backup.sh* in the topmost directory to be backed-up (e.g. */home/&lt;user&gt;/* for a user) (or place in a *$PATH* directory location).
 
 #### Execute
 
