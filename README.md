@@ -21,6 +21,32 @@ e.g. for Debian-based distros: `sudo apt install p7zip-full`
 
 ----
 
+### *daily_backup.sh*
+
++ 7-Zip compressed and encrypted backup of:
+    + date range of file changes until today, or
+    + files changed on current date.
++ *Hidden files are excluded*.
++ *File ownership is not retained*, only file permissions.
++ *.7z* file remains in directory where created.
+
+#### Usage
+
++ `chmod 700 daily_backup.sh`
++ Change PASSWORD value to something longer and more complex than `P@55w0rd`
++ Place *daily_backup.sh* in the topmost directory to be backed-up (e.g. */home/&lt;user&gt;/* for a user), or place in a *$PATH* location to execute the script from the terminal's current directory.
+
+#### Execute
+
+1. `./daily_backup.sh`
+2. `./daily_backup.sh 2018-03-01`
+
+1 -- Prompts for the startdate: enter date in the format YYYY-MM-DD, or hit ENTER for just today's files.
+
+2 -- Startdate is the first switch parameter.
+
+----
+
 ### *daily_backup_tar27z.sh*
 
 + Tar/7-Zip compressed amd encrypted backup of current day file changes.
@@ -36,31 +62,6 @@ e.g. for Debian-based distros: `sudo apt install p7zip-full`
 + Execute directly with: `./daily_backup_tar27z.sh` or add to a crontab.
 
 ----
-
-### *daily_backup.sh*
-
-+ 7-Zip compressed and encrypted backup of:
-    + date range of file changes until today, or
-    + files changed on current date.
-+ *Hidden files are excluded*.
-+ *File ownership is not retained*, only file permissions.
-+ *.7z* file remains in directory where created.
-
-#### Usage
-
-+ `chmod 700 daily_backup.sh`
-+ Change PASSWORD value to something longer and more complex than `P@55w0rd`
-+ Place *daily_backup.sh* in the topmost directory to be backed-up (e.g. */home/&lt;user&gt;/* for a user) (or place in a *$PATH* directory location).
-
-#### Execute
-
-1. `./daily_backup.sh`
-2. `./daily_backup.sh 2018-03-01`
-
-1 -- Prompts for the startdate: enter date in the format YYYY-MM-DD, or hit ENTER for just today's files.
-
-2 -- Startdate is the first switch parameter.
-
 
 <a id="windows"></a>
 ## Windows
